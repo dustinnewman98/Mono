@@ -1,0 +1,29 @@
+.post {
+    margin: 4em auto;
+    width: 65%;
+    text-align: left;
+
+    @media #{$mobile-query} {
+        width: 85%;
+    }
+
+    .post-title {
+        font: bold 42px PlayfairDisplay;
+        margin-top: 1em;
+    }
+    .post-subtitle {
+        margin-top: 0.5em;
+        font: $header-font Objectivity;
+        color: $dark-gray;
+    }
+    .post-date {
+        font-family: PlayfairDisplay;
+        color: $dark-gray;
+        margin-top: 1em;
+        margin-bottom: 2em;
+    }
+    .post-content {
+        font: 22px Cormorant;
+        line-height: 1.7;
+    }
+}
