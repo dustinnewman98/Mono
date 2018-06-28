@@ -6,3 +6,11 @@ yarn-error.log
 # Build directory
 /public
 .DS_Store
+
+#Secret Stuff
+client_secret.json
+config.json
+credentials.json
+
+#Misc
+*~

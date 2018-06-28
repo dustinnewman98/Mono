@@ -19,11 +19,15 @@
     .post-date {
         font-family: PlayfairDisplay;
         color: $dark-gray;
-        margin-top: 1em;
-        margin-bottom: 2em;
+        margin-top: 0.7em;
+        margin-bottom: 1.3em;
     }
     .post-content {
-        font: 22px Cormorant;
+        font: 1.3em Lora;
         line-height: 1.7;
+
+        p {
+            margin-bottom: 0.7em;
+        }
     }
 }
