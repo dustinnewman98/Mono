@@ -4,6 +4,14 @@ This is my personal website built largely with [Gatsby](https://www.gatsbyjs.org
 
 For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/), or right below!
 
+## Table of Contents
+* [Structure](#structure)
+* [Gatsby Installation](#gatsby-install)
+* [Install This Repo](#mono-install)
+  * [Make A Post](#make-post)
+* [How To Write A Post](#writing-a-post)
+* [How To Deploy](#deployment)
+
 ## Structure
 
 ```
