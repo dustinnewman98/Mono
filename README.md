@@ -2,7 +2,7 @@
 
 This is my personal website built largely with [Gatsby](https://www.gatsbyjs.org).
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/), or right below!.
+For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/), or right below!
 
 ## Structure
 
@@ -66,7 +66,7 @@ make develop
 
 `make install` just runs `npm install`, `make build` just runs `gatsby build`, and `make develop` just runs `gatsby develop`, so the difference is really just that "make" is shorter than "gatsby". 
 
-When you run `make develop` or `gatsby develop` if you just have to do it the difficult way, then the app will be running at [localhost:5000](localhost:5000).
+When you run `make develop` or `gatsby develop` if you just have to do it the difficult way, then the app will be running at [`localhost:5000`](localhost:5000).
 
 However, the `Makefile` does contain two non-trivial functions, which are `make post` and `make deploy`, so for those it's definitely easier for you to just run them.
 
@@ -89,7 +89,9 @@ Running `make post` will execute the file `./make-post.js` in [Node.js](https://
 
 ## Writing A Post
 I write all my posts in one folder on my Google Drive. This folder has a URL of something like:
+
 `https://drive.google.com/drive/u/0/folders/FOLDER-ID`
+
 Just get that folder ID and put it in your `config.json` where the app can access it. 
 
 To make a post, make a new document in that folder. To define the title, use Google's option for setting the "text style" and change it from the default "Normal" to "Title." To make the subtitle, do the same thing, but choose the style "Subtitle."
