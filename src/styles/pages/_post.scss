@@ -23,11 +23,15 @@
         margin-bottom: 1.3em;
     }
     .post-content {
-        font: 1.3em Lora;
+        font: 1.2em Lora;
         line-height: 1.7;
 
         p {
             margin-bottom: 0.7em;
+        }
+
+        img {
+          width: 100%;
         }
     }
 }

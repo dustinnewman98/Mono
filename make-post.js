@@ -92,6 +92,7 @@ function writeFiles(auth) {
     (err, { data }) => {
       if (data.files.length) {
         console.log('Children Found:')
+        console.log(data.files);
         data.files.map(file => {
           console.log(file.name)
 
@@ -107,7 +108,7 @@ function writeFiles(auth) {
             },
             (err, res) => {
               if (err) throw err
-
+              
               res.data
                 .on('end', () => {
                   makePost()
@@ -136,7 +137,7 @@ function parseDump() {
       }
     )
     .replace(/<span style="font-style:italic">(.*?)<\/span>/gi, (match, $2) => {
-      return '__' + $2 + '__'
+      return '_' + $2 + '_'
     })
     .replace(/style="[^\"]*"/gi, '')
     .replace(/<(?!\/?p|img|a(?=>|\s.*>))\/?.*?>/gi, '')
