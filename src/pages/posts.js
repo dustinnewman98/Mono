@@ -22,10 +22,10 @@ export default function Posts({ data }) {
             {posts
                 .filter(post => post.node.frontmatter.title.length > 0)
                 .map(({ node: post }) => {
-                    return (<Link to={post.frontmatter.path} className="one-post" style={{ display: 'flex' }}>
+                    return (<Link to={post.fields.path} className="one-post" style={{ display: 'flex' }}>
                         <div className="one-post-date" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                            <h1 className="one-post-date-day">{getDay(post.frontmatter.date)}</h1>
-                            <p className="one-post-date-month">{getMonth(post.frontmatter.date)}</p>
+                            <h1 className="one-post-date-day">{getDay(post.fields.date)}</h1>
+                            <p className="one-post-date-month">{getMonth(post.fields.date)}</p>
                         </div>
                         <div className="one-post-blurb" style={{ display: 'flex', flexDirection: 'column' }}>
                             <h1 className="one-post-blurb-title">{post.frontmatter.title}</h1>
@@ -39,16 +39,28 @@ export default function Posts({ data }) {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(
+        filter: {
+            sourceInstanceName: { 
+                eq: "posts" 
+            }
+        }
+        sort: { 
+            order: DESC, 
+            fields: [fields___date] 
+        }
+    ) {
       edges {
         node {
           excerpt(pruneLength: 250)
           id
+          fields {
+            date(formatString: "MMMM DD, YYYY")
+            path
+          }
           frontmatter {
             title
             subtitle
-            date(formatString: "MMMM DD, YYYY")
-            path
           }
         }
       }

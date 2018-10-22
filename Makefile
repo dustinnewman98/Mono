@@ -5,14 +5,11 @@ C=$(shell echo "$S:$P/")
 
 develop:
 	@clear
+	@$(MAKE) install
 	@$(BIN)/gatsby develop
 
 install:
 	@npm install
-
-post:
-	@clear
-	@node make-post.js
 
 build:
 	@$(BIN)/gatsby build
