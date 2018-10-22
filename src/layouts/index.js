@@ -4,13 +4,17 @@ import Header from '../components/header';
 import '../styles/main.scss';
 import getSeo from '../utils/get-seo';
 
-export default ({ children, location }) => {
+export default class Layout extends React.Component {
+  render() {
     return (
-        <div>
-            <Helmet
-                title={getSeo(location.pathname)} />
-            <Header />
-            {children()}
-        </div>
-    )
+      <div>
+        <Helmet
+          defaultTitle={`DUSTIN NEWMAN`}
+          titleTemplate={`%s | DUSTIN NEWMAN`}
+        />
+        <Header />
+        {this.props.children}
+      </div>
+    );
+  }
 }

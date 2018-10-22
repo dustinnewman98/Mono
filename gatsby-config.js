@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'DUSTIN NEWMAN',
+    author: 'Dustin Newman',
     description: 'LA-based web and iOS developer (will work for chai lattes.',
   },
   plugins: [

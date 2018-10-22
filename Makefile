@@ -3,13 +3,21 @@ S=$(shell jq '.server' config.json)
 P=$(shell jq '.path' config.json)
 C=$(shell echo "$S:$P/")
 
+YARN := yarn
+NPM := npm
+
 develop:
 	@clear
-	@$(MAKE) install
 	@$(BIN)/gatsby develop
 
 install:
-	@npm install
+	$(YARN) install
+
+clean:
+	@rm -f package-lock.json yarn.lock yarn-error.log
+	@rm -rf node_modules/ .cache/
+	$(YARN) cache clean
+	$(NPM) cache clean --force
 
 build:
 	@$(BIN)/gatsby build

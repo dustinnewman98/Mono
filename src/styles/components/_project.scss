@@ -5,7 +5,6 @@
 
   .text-box, .image-box {
     flex: 1 1 0;
-    height: 100%;
   }
 
   .text-box {
@@ -21,6 +20,7 @@
   .image-box {
     .black-box {
       background-color: $dark-gray;
+      height: calc(100% - 2em);
       margin: 1em;
       display: flex;
       flex-direction: column;
