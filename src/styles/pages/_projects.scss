@@ -2,8 +2,11 @@
   border: 3px solid $dark-gray;
   width: 100%;
   display: flex;
+  max-height: 50vh;
+  margin-bottom: 5em;
 
-  .text-box, .image-box {
+  .text-box,
+  .image-box {
     flex: 1 1 0;
     padding: 1em;
   }
@@ -36,12 +39,15 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      
-      img {
-        width: 100%;
-        height: auto;
+
+      .proj-img {
+        width: 100% !important;
+        height: auto !important;
+
+        img {
+          object-fit: contain !important;
+        }
       }
     }
   }
-
 }

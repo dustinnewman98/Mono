@@ -40,7 +40,7 @@ export default function Posts({ data }) {
           .map(({ node: post }) => {
             return (
               <Link
-                to={post.fields.slug}
+                to={`/posts${post.fields.slug}`}
                 className="one-post"
                 style={{ display: 'flex' }}
               >
@@ -81,11 +81,7 @@ export default function Posts({ data }) {
 export const postQuery = graphql`
   query postQuery {
     allMarkdownRemark(
-        filter: {
-            fileAbsolutePath: {
-                regex: "/(\/src\/posts)/.*.md$/"
-            }
-        }
+      filter: { fileAbsolutePath: { regex: "/(/src/posts)/.*.md$/" } }
     ) {
       edges {
         node {

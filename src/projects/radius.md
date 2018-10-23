@@ -1,12 +1,10 @@
 ---
-title: 'meow'
+title: 'radius'
 subtitle: 'Social media scheduler for the Daily Bruin'
-img: './meow.png'
-role: 'Assistant Editor'
-stack: Django, React, Postgres
-github: 'dailybruin/meow'
-live: 'meow.dailybruin.com'
-slug: /projects/meow
+img: './radius.png'
+role: 'Co-Founder'
+stack: Swift, iOS SDK, Firebase
+slug: /projects/radius
 ---
 
 Hello there! This is my very first post on my new website! 🎉 (Let's hope emojis work properly.)

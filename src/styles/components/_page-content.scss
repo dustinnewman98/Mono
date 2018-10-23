@@ -1,9 +1,11 @@
 .page-content {
-    margin: 4em auto;
-    width: 75%;
-    text-align: left;
+  margin: 4em auto;
+  width: 75%;
+  max-width: 75%;
+  text-align: left;
 
-    @media #{$mobile-query} {
-        width: 85%;
-    }
+  @media #{$mobile-query} {
+    width: 85%;
+    max-width: 85%;
+  }
 }

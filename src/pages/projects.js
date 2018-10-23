@@ -1,8 +1,31 @@
 import React from 'react';
 import PageHeader from '../components/page-header';
 import PageContent from '../components/page-content';
-import Project from '../components/project';
 import Layout from '../layouts';
+import Link from 'gatsby-link';
+import Img from 'gatsby-image';
+
+function renderGithub(github) {
+  return (
+    <p>
+      <span aria-label="octopus" role="img">
+        🐙
+      </span>{' '}
+      Github: <a href={`https://www.github.com/${github}`}>{github}</a>
+    </p>
+  );
+}
+
+function renderLive(live) {
+  return (
+    <p>
+      <span aria-label="sparkles" role="img">
+        ✨
+      </span>{' '}
+      Live at: <a href={live}>{live}</a>
+    </p>
+  );
+}
 
 export default function Projects({ data }) {
   const { edges: projects } = data.allMarkdownRemark;
@@ -11,21 +34,50 @@ export default function Projects({ data }) {
     <Layout>
       <PageContent>
         <PageHeader text="My Projects" emoji="🤖" />
-        {projects
-          .filter(project => project.node.frontmatter.title.length > 0)
-          .map(({ node: project }) => {
-            return (
-              <Project
-                title={project.frontmatter.title}
-                subtitle={project.frontmatter.subtitle}
-                img={project.frontmatter.img.childImageSharp.fixed}
-                role={project.frontmatter.role}
-                stack={project.frontmatter.stack}
-                github={project.frontmatter.github}
-                live={project.frontmatter.live}
-              />
-            );
-          })}
+        <div className="project-wrapper">
+          {projects
+            .filter(project => project.node.frontmatter.title.length > 0)
+            .map(({ node: project }) => {
+              return (
+                <div className="one-project">
+                  <div className="text-box">
+                    <Link to={`/projects${project.fields.slug}`}>
+                      <h1 className="title">{project.frontmatter.title}</h1>
+                    </Link>
+                    <div className="info">
+                      <p className="subtitle">{project.frontmatter.subtitle}</p>
+                      <p>
+                        <span aria-label="bread" role="img">
+                          🍞
+                        </span>{' '}
+                        Role: {project.frontmatter.role}
+                      </p>
+                      <p>
+                        <span aria-label="wizard" role="img">
+                          🧙
+                        </span>{' '}
+                        Worked with: {project.frontmatter.stack}
+                      </p>
+                      {project.frontmatter.github === null
+                        ? null
+                        : renderGithub(project.frontmatter.github)}
+                      {project.frontmatter.live === null
+                        ? null
+                        : renderLive(project.frontmatter.live)}
+                    </div>
+                  </div>
+                  <div className="image-box">
+                    <div className="black-box">
+                      <Img
+                        className="proj-img"
+                        fluid={project.frontmatter.img.childImageSharp.fluid}
+                      />
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+        </div>
       </PageContent>
     </Layout>
   );
@@ -34,11 +86,7 @@ export default function Projects({ data }) {
 export const projQuery = graphql`
   query projQuery {
     allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: {
-          regex: "/(\/src\/projects)/.*.md$/"
-        }
-      }
+      filter: { fileAbsolutePath: { regex: "/(/src/projects)/.*.md$/" } }
     ) {
       edges {
         node {
@@ -53,8 +101,8 @@ export const projQuery = graphql`
             img {
               publicURL
               childImageSharp {
-                fixed(width: 400) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 700) {
+                  ...GatsbyImageSharpFluid_noBase64
                 }
               }
             }

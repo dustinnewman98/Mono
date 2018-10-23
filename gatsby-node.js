@@ -24,26 +24,28 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
   return new Promise((resolve, reject) => {
-    graphql(`{
-      allMarkdownRemark{
-        edges {
-          node {
-            excerpt(pruneLength: 250)
-            html
-            id
-            collection
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              subtitle
-              date
+    graphql(`
+      {
+        allMarkdownRemark {
+          edges {
+            node {
+              excerpt(pruneLength: 250)
+              html
+              id
+              collection
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                subtitle
+                date
+              }
             }
           }
         }
       }
-      }`).then(result => {
+    `).then(result => {
       console.log(result);
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         if (node.collection == 'projects') {
