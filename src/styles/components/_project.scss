@@ -5,6 +5,7 @@
 
   .text-box, .image-box {
     flex: 1 1 0;
+    padding: 1em;
   }
 
   .text-box {
@@ -12,8 +13,17 @@
       font: 36px Objectivity;
     }
 
+    .subtitle {
+      font-weight: bold;
+    }
+
+    .info {
+      margin-left: 1em;
+    }
+
     p {
-      font: 14px Objectivity;
+      font: 16px Objectivity;
+      padding: 1em 0;
     }
   }
 

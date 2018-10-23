@@ -17,7 +17,8 @@ export default function Projects({ data }) {
             return (
               <Project
                 title={project.frontmatter.title}
-                description={project.frontmatter.description}
+                subtitle={project.frontmatter.subtitle}
+                img={project.frontmatter.img.childImageSharp.fixed}
                 role={project.frontmatter.role}
                 stack={project.frontmatter.stack}
                 github={project.frontmatter.github}
@@ -49,6 +50,14 @@ export const projQuery = graphql`
           frontmatter {
             title
             subtitle
+            img {
+              publicURL
+              childImageSharp {
+                fixed(width: 400) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
             role
             stack
             github

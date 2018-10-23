@@ -1,11 +1,12 @@
 ---
 title: "meow"
-description: "Social media scheduler for the Daily Bruin"
+subtitle: "Social media scheduler for the Daily Bruin"
+img: "./meow.png"
 role: "Assistant Editor"
-stack: "Django, React, Postgres"
+stack: Django, React, Postgres
 github: "dailybruin/meow"
 live: "meow.dailybruin.com"
-path: "/posts/2018/6/24/Welcome-to-my-blog"
+path: /projects/meow
 ---
 
 Hello there! This is my very first post on my new website! 🎉 (Let's hope emojis work properly.)
