@@ -1,9 +1,11 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import getSeo from '../utils/get-seo';
 import Layout from '../layouts';
 
 export default function PostTemplate({ data }) {
+  console.log(data);
   const post = data.markdownRemark;
   const frontmatter = post.frontmatter;
 
@@ -38,8 +40,8 @@ export default function PostTemplate({ data }) {
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       fields {
         slug

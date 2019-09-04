@@ -1,8 +1,7 @@
 ---
 title: "Welcome to my blog!"
 subtitle: "Please excuse the dust..."
-date: "2018-06-24T06:34:53.266Z"
-path: "/posts/2018/6/24/Welcome-to-my-blog"
+date: "2018-06-24"
 ---
 
 Hello there! This is my very first post on my new website! 🎉 (Let's hope emojis work properly.)
