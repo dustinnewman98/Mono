@@ -23,7 +23,17 @@ class AboutContent extends React.Component {
           <span aria-label="sparkles" role="img">
             ✨
           </span>{' '}
-          influence on people's lives. I'm really passionate about{' '}
+          influence on people's lives. I am really passionate about building scalable{' '}
+          <span aria-label="snake" role="img">
+            🐍
+          </span>{' '}
+          systems for web applications and learning new technologies. 
+          I tend to obsess over squeezing every last ounce of efficiency{' '}
+          <span aria-label="lightning" role="img">
+            ⚡
+          </span>{' '}
+          out of anything I make.
+          I also really enjoy{' '}
           <abbr title="user interface">UI</abbr> design and creating unique and
           memorable UIs, not just following style guides.{' '}
           <span aria-label="stop-sign" role="img">
@@ -39,13 +49,13 @@ class AboutContent extends React.Component {
           <span aria-label="rocket" role="img">
             🚀
           </span>{' '}
-          major at <a href="http://ucla.edu">UCLA</a>, where I'm an assistant
+          major at <a href="http://ucla.edu">UCLA</a>, where I'm Online
           editor for <a href="http://dailybruin.com">the Daily Bruin</a>{' '}
           <span aria-label="bear" role="img">
             🐻
           </span>{' '}
-          managing internal tools and a board officer on{' '}
-          <a href="http://www.uclaacm.com/">ACM Hack</a>.{' '}
+          managing the entire suite of web products produced there and a member of{' '}
+          <a href="http://www.uclaacm.com/">ACM</a>.{' '}
           <span aria-label="tools" role="img">
             🛠
           </span>
