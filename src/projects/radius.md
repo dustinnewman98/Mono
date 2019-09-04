@@ -1,9 +1,9 @@
 ---
 title: 'radius'
-subtitle: 'Social media scheduler for the Daily Bruin'
+subtitle: 'Privacy-first location-based social media iOS app'
 img: './radius.png'
 role: 'Co-Founder'
 stack: Swift, iOS SDK, Firebase
-slug: /projects/radius
+live: 'https://apps.apple.com/us/app/radius-whos-in-your-circle/id1473404027'
 ---
 
